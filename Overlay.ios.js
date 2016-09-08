@@ -45,7 +45,12 @@ var Overlay = React.createClass({
                     pointerEvents="none"
                     aboveStatusBar={this.props.aboveStatusBar}>
                     {
-                        React.Children.map(this.props.children, React.cloneElement)
+                        React.Children.map(this.props.children, function(child, key) {
+                          return React.cloneElement(child, {
+                            key: key,
+                            this.props,
+                          })
+                        })
                     }
                 </RNOverlay>
             )
