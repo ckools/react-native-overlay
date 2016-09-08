@@ -48,8 +48,7 @@ var Overlay = React.createClass({
                         React.Children.map(this.props.children, function(child, key) {
                           return React.cloneElement(child, {
                             key: key,
-                            this.props,
-                          })
+                          });
                         })
                     }
                 </RNOverlay>
